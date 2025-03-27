@@ -1,40 +1,37 @@
-﻿<section id="home" class="s-home page-hero target-section" data-parallax="scroll"
+﻿@model List<MyPortfolioUdemy.DAL.Entities.Feature>
+
+
+<section id="home" class="s-home page-hero target-section" data-parallax="scroll"
     data-image-src="https://i.hizliresim.com/krhg0g7.jpg" data-natural-width=3000 data-natural-height=2000
     data-position-y=center>
 
     <div class="overlay"></div>
     <div class="shadow-overlay"></div>
 
-    <div class="home-content">
-
-        <div class="row home-content__main">
-
-            <h3>Merhaba</h3>
-
-            <h1>
-                I am Jonathan Doe. <br>
-                I am a graphic & UI/UX <br>
-                designer based in Somewhere.
-            </h1>
-            <div class="home-content__buttons">
-                <a href="#works" class="smoothscroll btn btn--stroke">
-                Bazı Çalışmalarım
-                </a>
-                <a href="#about" class="smoothscroll btn btn--stroke">
-                Hakkımda...
-                </a>
+    @foreach (var item in Model)
+    {
+        <div class="home-content">
+            <div class="row home-content__main">
+                <h3>@item.Title</h3>
+                <h1>
+                    @item.Description
+                </h1>
+                <div class="home-content__buttons">
+                    <a href="#works" class="smoothscroll btn btn--stroke">
+                        Bazı Çalışmalarım
+                    </a>
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        Hakkımda...
+                    </a>
+                </div>
+                <div class="home-content__scroll">
+                    <a href="#about" class="scroll-link smoothscroll">
+                        <span>Aşağı İn</span>
+                    </a>
+                </div>
             </div>
-
-            <div class="home-content__scroll">
-                <a href="#about" class="scroll-link smoothscroll">
-                    <span>Aşağı İn</span>
-                </a>
-            </div>
-
         </div>
-
-    </div> <!-- end home-content -->
-
+    }
     <ul class="home-social">
         <li>
             <a href="#"><i class="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>

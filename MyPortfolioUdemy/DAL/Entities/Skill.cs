@@ -1,14 +1,13 @@
-﻿using System;
-
-/// <summary>
-/// Summary description for Class1
-/// </summary>
-public class Skill
+﻿namespace MyPortfolioUdemy.DAL.Entities
 {
-	public Skill()
+	/// <summary>
+	/// Summary description for Skill
+	/// </summary>
+	public class Skill
 	{
-	public int SkillId { get; set; }
-    public string Title { get; set; }
-    public int Value{ get; set; }
+		public int SkillId { get; set; }
+		public string Title { get; set; } = string.Empty;
+		public int Value { get; set; }
+
 	}
 }

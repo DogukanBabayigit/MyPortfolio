@@ -1,21 +1,14 @@
-﻿using System;
-
-/// <summary>
-/// Summary description for Class1
-/// </summary>
-public class Contact
+﻿namespace MyPortfolioUdemy.DAL.Entities
 {
-    public Contact()
+    public class Contact
     {
-
-        public string ContactId { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string Phone1 { get; set; }
-    public string Phone2 { get; set; }
-    public string Email1 { get; set; }
-    public string Email2 { get; set; }
-    public string Address { get; set; }
-
-}
+        public string? ContactId { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? Phone1 { get; set; }
+        public string? Phone2 { get; set; }
+        public string? Email1 { get; set; }
+        public string? Email2 { get; set; }
+        public string? Address { get; set; }
+    }
 }

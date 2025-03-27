@@ -1,11 +1,9 @@
-﻿using System;
-
-public class Feature
+﻿namespace MyPortfolioUdemy.DAL.Entities
 {
-	public Feature()
+	public class Feature
 	{
-	public int FeatureId { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
+		public int FeatureId { get; set; }
+		public string Title { get; set; } = string.Empty; // Initialize non-nullable property
+		public string Description { get; set; } = string.Empty; // Initialize non-nullable property
 	}
 }

@@ -6,7 +6,7 @@ namespace MyPortfolioUdemy.ViewComponents;
 
 public class _ExperienceComponentPartial : ViewComponent
 {
-        private readonly MyPortfolioContext _context;
+         private readonly MyPortfolioContext _context;
 
     public _ExperienceComponentPartial(MyPortfolioContext context)
     {

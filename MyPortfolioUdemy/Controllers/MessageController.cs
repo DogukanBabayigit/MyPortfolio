@@ -40,7 +40,6 @@ namespace MyPortfolioUdemy.Controllers
             }
             return RedirectToAction("Inbox");
         }
-
         public IActionResult DeleteMessage(int id)
         {
             var value = _context.Messages.Find(id);
@@ -55,11 +54,7 @@ namespace MyPortfolioUdemy.Controllers
         public IActionResult GetMessageDetails(int id)
         {
             var value = _context.Messages.Find(id);
-            if (value != null)
-            {
-                return View(value);
-            }
-            return NotFound();
+            return View(value);
         }
 
     }

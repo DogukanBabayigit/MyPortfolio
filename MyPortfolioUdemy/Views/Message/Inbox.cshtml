@@ -31,32 +31,40 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                @foreach (var item in Model)
-                                {
+                            @foreach (var item in Model)
+                            {
                                 <tr>
                                     <td>@item.MessageId</td>
                                     <td>@item.NameSurname</td>
                                     <td>@item.Subject</td>
-                                    <td>@item.SendDate.ToShortDateString()</td>
-                                    <td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-warning">Mesajı
-                                            Aç</a></td>
-                                    @if (item.IsRead == true)
+                                    <td>@item.SendDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                    <td>
+                                        <a href="/Message/GetMessageDetails/@item.MessageId" class="btn btn-warning">Mesajı
+                                            Aç</a>
+                                    </td>
+                                    @if (item.IsRead)
                                     {
-                                        <td><a href="/Message/ChangeIsReadToFalse/@item.MessageId"
-                                                class="btn btn-dark">Okunmadı</a></td>
+                                        <td>
+                                            <a href="/Message/ChangeIsReadToFalse/@item.MessageId"
+                                                class="btn btn-dark">Okunmadı</a>
+                                        </td>
                                     }
                                     else
                                     {
-                                        <td><a href="/Message/ChangeIsReadToTrue/@item.MessageId"
-                                                class="btn btn-info">Okundu</a></td>
+                                        <td>
+                                            <a href="/Message/ChangeIsReadToTrue/@item.MessageId"
+                                                class="btn btn-info">Okundu</a>
+                                        </td>
                                     }
-                                    <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a></td>
-                                    <td><a href="/Messages/GetMessageDetails/@item.MessageId"
-                                            class="btn btn-success">Güncelle</a></td>
+                                    <td>
+                                        <a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Message/GetMessageDetails/@item.MessageId"
+                                            class="btn btn-success">Güncelle</a>
+                                    </td>
                                 </tr>
                             }
-                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -12,8 +12,8 @@ using MyPortfolioUdemy.DAL.Context;
 namespace MyPortfolioUdemy.Migrations
 {
     [DbContext(typeof(MyPortfolioContext))]
-    [Migration("20250327091639_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250505083358_SyncWithDatabase")]
+    partial class SyncWithDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -204,6 +204,31 @@ namespace MyPortfolioUdemy.Migrations
                     b.HasKey("SkillId");
 
                     b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("MyPortfolioUdemy.DAL.Entities.ToDoList", b =>
+                {
+                    b.Property<int>("ToDoListId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ToDoListId"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ToDoListId");
+
+                    b.ToTable("ToDoLists");
                 });
 
             modelBuilder.Entity("SocialMedia", b =>

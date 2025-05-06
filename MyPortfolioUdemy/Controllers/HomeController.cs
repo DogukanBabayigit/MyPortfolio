@@ -1,8 +1,8 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyPortfolioUdemy.Models;
+using System.Diagnostics;
 
-namespace MyPortfolioUdemy.Controllers
+namespace MyPortolioUdemy.Controllers
 {
     public class HomeController : Controller
     {

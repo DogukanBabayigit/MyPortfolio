@@ -1,8 +1,8 @@
-﻿namespace MyPortfolioUdemy.DAL.Entities
+﻿namespace MyPortolioUdemy.DAL.Entities
 {
     public class Contact
     {
-        public string? ContactId { get; set; }
+        public int ContactId { get; set; }
         public string? Title { get; set; }
         public string? Description { get; set; }
         public string? Phone1 { get; set; }

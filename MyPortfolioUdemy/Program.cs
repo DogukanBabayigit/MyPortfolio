@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MyPortfolioUdemy.DAL.Context;
+using MyPortolioUdemy.DAL.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,25 +1,23 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
-using MyPortfolioUdemy.DAL.Context;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyPortolioUdemy.DAL.Context;
 
-namespace MyPortfolioUdemy.ViewComponents;
-
-public class _AboutComponentPartial : ViewComponent
+namespace MyPortolioUdemy.ViewComponents
 {
-    private readonly MyPortfolioContext _context;
-
-    public _AboutComponentPartial(MyPortfolioContext context)
+    public class _AboutComponentPartial : ViewComponent
     {
-        _context = context;
-    }
-    public IViewComponentResult Invoke()
-    {
-        ViewBag.aboutTitle = _context.Abouts.Select(x => x.Title).FirstOrDefault();
-        
-        ViewBag.aboutSubDescription = _context.Abouts.Select(x => x.SubDescription).FirstOrDefault();
+        private readonly MyPortfolioContext _context;
 
-        ViewBag.aboutDetail = _context.Abouts.Select(x => x.Details).FirstOrDefault();
+        public _AboutComponentPartial(MyPortfolioContext context)
+        {
+            _context = context;
+        }
+        public IViewComponentResult Invoke()
+        {
 
-        return View();
+            ViewBag.aboutTitle = _context.Abouts.Select(x => x.Title).FirstOrDefault();
+            ViewBag.aboutSubDescription = _context.Abouts.Select(x => x.SubDescription).FirstOrDefault();
+            ViewBag.aboutDetail = _context.Abouts.Select(x => x.Details).FirstOrDefault();
+            return View();
+        }
     }
 }

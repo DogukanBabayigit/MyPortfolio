@@ -1,14 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MyPortfolioUdemy.Controllers
+namespace MyPortolioUdemy.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: DefaultController
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
-
     }
 }

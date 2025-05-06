@@ -2,7 +2,7 @@
 
 namespace MyPortolioUdemy.ViewComponents
 {
-    public class _TestimonialComponentPartial:ViewComponent
+    public class _StatisticComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

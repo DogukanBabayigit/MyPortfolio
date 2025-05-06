@@ -1,12 +1,12 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MyPortfolioUdemy.ViewComponents.LayoutViewComponents;
-
-public class _LayoutHeadComponentPartial : ViewComponent
+namespace MyPortolioUdemy.ViewComponents.LayoutViewComponents
 {
-    public IViewComponentResult Invoke()
-    {
-        return View();
-    }
+	public class _LayoutHeadComponentPartial : ViewComponent
+	{
+		public IViewComponentResult Invoke()
+		{
+			return View();
+		}
+	}
 }

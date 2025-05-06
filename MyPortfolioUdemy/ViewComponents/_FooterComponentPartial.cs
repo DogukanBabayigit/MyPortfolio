@@ -1,19 +1,12 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
-using MyPortfolioUdemy.DAL.Context;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MyPortfolioUdemy.ViewComponents;
-
-public class _FooterComponentPartial : ViewComponent
+namespace MyPortolioUdemy.ViewComponents
 {
-    private readonly MyPortfolioContext _context;
-
-    public _FooterComponentPartial(MyPortfolioContext context)
+    public class _FooterComponentPartial:ViewComponent
     {
-        _context = context;
-    }
-    public IViewComponentResult Invoke()
-    {
-        return View();
+        public IViewComponentResult Invoke()
+        {
+            return View();
+        }
     }
 }

@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using MyPortfolioUdemy.DAL.Context;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyPortolioUdemy.DAL.Context;
 
-namespace MyPortfolioUdemy.Controllers
+namespace MyPortolioUdemy.Controllers
 {
     public class StatisticController : Controller
     {
@@ -11,8 +11,7 @@ namespace MyPortfolioUdemy.Controllers
         {
             _context = context;
         }
-
-        public ActionResult Index()
+        public IActionResult Index()
         {
             ViewBag.v1 = _context.Skills.Count();
             ViewBag.v2 = _context.Messages.Count();

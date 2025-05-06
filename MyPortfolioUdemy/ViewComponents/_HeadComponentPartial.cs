@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
-using MyPortfolioUdemy.DAL.Context;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MyPortfolioUdemy.ViewComponents;
-
-public class _HeadComponentPartial : ViewComponent
+namespace MyPortolioUdemy.ViewComponents
 {
-    public IViewComponentResult Invoke()
+    public class _HeadComponentPartial : ViewComponent
     {
-        return View();
+        public IViewComponentResult Invoke()
+        {
+            return View();
+        }
     }
 }

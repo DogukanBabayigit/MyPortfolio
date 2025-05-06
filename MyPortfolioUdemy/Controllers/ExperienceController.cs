@@ -1,59 +1,61 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MyPortfolioUdemy.DAL.Context;
-using MyPortfolioUdemy.DAL.Entities;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyPortolioUdemy.DAL.Context;
+using MyPortolioUdemy.DAL.Entities;
 
-namespace MyPortfolioUdemy.Controllers
+namespace MyPortolioUdemy.Controllers
 {
-    public class ExperienceController : Controller
-    {
-        MyPortfolioContext context;
+	public class ExperienceController : Controller
+	{
+		private readonly MyPortfolioContext _context;
 
-        public ExperienceController(DbContextOptions<MyPortfolioContext> options)
-        {
-            context = new MyPortfolioContext(options);
-        }
-        public IActionResult ExperienceList()
-        {
-            var values = context.Experiences.ToList();
-            return View(values);
-        }
-        [HttpGet]
-        public IActionResult CreateExperience()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult CreateExperience(Experience experience)
-        {
-            context.Experiences.Add(experience);// Ekleme İşlemi
-            context.SaveChanges();// Değişiklikleri Kaydet 
-            return RedirectToAction("ExperienceList"); // Listeleme Sayfasına Yönlendir.
-        }
-        public IActionResult DeleteExperience(int id)
-        {
-            var value = context.Experiences.Find(id); // Silinecek Değer
-            if (value != null)
-            {
-                context.Experiences.Remove(value); // Silme İşlemi
-                context.SaveChanges(); // Değişiklikleri Kaydet
-            }
-            return RedirectToAction("ExperienceList");// Listeleme Sayfasına Yönlendir.
-        }   
+		public ExperienceController(MyPortfolioContext context)
+		{
+			_context = context;
+		}
+		public IActionResult ExperienceList()
+		{
+			var values = _context.Experiences.ToList();
+			return View(values);
+		}
 
-        [HttpGet]
-        public IActionResult UpdateExperience(int id)
-        {
-            var value = context.Experiences.Find(id);// Güncellenecek Değer
-            return View(value);// Güncelleme Sayfasına Gönder
-        }
+		[HttpGet]
+		public IActionResult CreateExperience()
+		{
+			return View();
+		}
 
-        [HttpPost]
-        public IActionResult UpdateExperience(Experience experience)
-        {
-            context.Experiences.Update(experience);// Güncelleme İşlemi
-            context.SaveChanges();// Değişiklikleri Kaydet
-            return RedirectToAction("ExperienceList");// Listeleme Sayfasına Yönlendir.
-        }
-    }
+		[HttpPost]
+		public IActionResult CreateExperience(Experience experience)
+		{
+			_context.Experiences.Add(experience);
+			_context.SaveChanges();
+			return RedirectToAction("ExperienceList");
+		}
+
+		public IActionResult DeleteExperience(int id)
+		{
+			var value = _context.Experiences.Find(id);
+			if (value != null)
+			{
+				_context.Experiences.Remove(value);
+				_context.SaveChanges();
+			}
+			return RedirectToAction("ExperienceList");
+		}
+
+		[HttpGet]
+		public IActionResult UpdateExperience(int id)
+		{
+			var value = _context.Experiences.Find(id);
+			return View(value);
+		}
+
+		[HttpPost]
+		public IActionResult UpdateExperience(Experience experience)
+		{
+			_context.Experiences.Update(experience);
+			_context.SaveChanges();
+			return RedirectToAction("ExperienceList");
+		}
+	}
 }

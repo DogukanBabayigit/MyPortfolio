@@ -1,8 +1,5 @@
-﻿namespace MyPortfolioUdemy.DAL.Entities
+﻿namespace MyPortolioUdemy.DAL.Entities
 {
-    /// <summary>
-    /// Summary description for Portfolio
-    /// </summary>
     public class Portfolio
     {
         public int PortfolioId { get; set; }

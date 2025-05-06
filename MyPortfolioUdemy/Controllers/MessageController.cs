@@ -1,8 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
-using MyPortfolioUdemy.DAL.Context;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyPortolioUdemy.DAL.Context;
 
-namespace MyPortfolioUdemy.Controllers
+namespace MyPortolioUdemy.Controllers
 {
     public class MessageController : Controller
     {
@@ -12,13 +11,11 @@ namespace MyPortfolioUdemy.Controllers
         {
             _context = context;
         }
-        public ActionResult Inbox()
+        public IActionResult Inbox()
         {
             var values = _context.Messages.ToList();
             return View(values);
         }
-
-        [HttpGet]
         public IActionResult ChangeIsReadToTrue(int id)
         {
             var value = _context.Messages.Find(id);
@@ -29,7 +26,7 @@ namespace MyPortfolioUdemy.Controllers
             }
             return RedirectToAction("Inbox");
         }
-        [HttpGet]
+
         public IActionResult ChangeIsReadToFalse(int id)
         {
             var value = _context.Messages.Find(id);
@@ -40,6 +37,7 @@ namespace MyPortfolioUdemy.Controllers
             }
             return RedirectToAction("Inbox");
         }
+
         public IActionResult DeleteMessage(int id)
         {
             var value = _context.Messages.Find(id);
@@ -50,13 +48,10 @@ namespace MyPortfolioUdemy.Controllers
             }
             return RedirectToAction("Inbox");
         }
-
-        public IActionResult GetMessageDetails(int id)
+        public IActionResult MessageDetail(int id)
         {
             var value = _context.Messages.Find(id);
             return View(value);
         }
-
     }
 }
-

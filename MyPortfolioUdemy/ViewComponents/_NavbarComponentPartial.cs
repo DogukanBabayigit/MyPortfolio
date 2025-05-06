@@ -1,21 +1,12 @@
-using System;
-using Microsoft.AspNetCore.Mvc;
-using MyPortfolioUdemy.DAL.Context;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MyPortfolioUdemy.ViewComponents;
-
-public class _NavbarComponentPartial : ViewComponent
+namespace MyPortolioUdemy.ViewComponents
 {
-    private readonly MyPortfolioContext _context;
-
-    public _NavbarComponentPartial(MyPortfolioContext context)
+    public class _NavbarComponentPartial : ViewComponent
     {
-        _context = context;
-    }
-    public IViewComponentResult Invoke()
-    {
-        ViewBag.toDoListCount = _context.ToDoLists.Where(x => x.Status == false).Count();
-        var values = _context.ToDoLists.Where(x => x.Status == false).ToList();
-        return View(values);
+        public IViewComponentResult Invoke()
+        {
+            return View();
+        }
     }
 }
